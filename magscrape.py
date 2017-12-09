@@ -87,7 +87,7 @@ def tpb_results(search):
 	return magnet_links
 
 def main():
-	search = str(input("Magnet search for: "))
+	search = str(raw_input("Magnet search for: "))
 	results = tpb_results(search)
 	print ("="*200)
 	for link in results:
