@@ -87,13 +87,16 @@ def tpb_results(search):
 	return magnet_links
 
 def main():
-	search = str(raw_input("Magnet search for: "))
-	results = tpb_results(search)
-	print ("="*200)
-	for link in results:
-		print ("Title: {}\nSeeders: {}\n Magnet: {}".format(link["title"], link["seeders"], link["link"]))
-		print ("-"*40)
-	print ("Complete!")
+	try:
+		search = str(input("Magnet search for: "))
+		results = tpb_results(search)
+		print ("="*200)
+		for link in results:
+			print ("Title: {}\nSeeders: {}\n Magnet: {}".format(link["title"], link["seeders"], link["link"]))
+			print ("-"*40)
+		print ("Complete!")
+	except KeyboardInterrupt as ki:
+		print("\n[!] keyboard interrupt detected...exiting")
 
 if __name__ == "__main__":
 	main()
